@@ -1,97 +1,150 @@
-This is a new [**React Native**](https://reactnative.dev) project, bootstrapped using [`@react-native-community/cli`](https://github.com/react-native-community/cli).
+# Wagons Task Explorer
 
-# Getting Started
+A React Native application built to explore, view, filter, and update
+tasks fetched from a remote API with offline persistence.
 
-> **Note**: Make sure you have completed the [Set Up Your Environment](https://reactnative.dev/docs/set-up-your-environment) guide before proceeding.
+This project demonstrates clean architecture, reusable UI components,
+responsive design, and state management using React Context and Hooks.
 
-## Step 1: Start Metro
+------------------------------------------------------------------------
 
-First, you will need to run **Metro**, the JavaScript build tool for React Native.
+## 📱 Features
 
-To start the Metro dev server, run the following command from the root of your React Native project:
+-   Fetch tasks from remote API (`jsonplaceholder.typicode.com`)
+-   Offline-first support using AsyncStorage
+-   Filter tasks by:
+    -   All
+    -   Completed
+    -   Incomplete
+-   View detailed task information
+-   Update task completion status
+-   Persistent state across app restarts
+-   Responsive UI across different screen sizes
+-   Centralized color and style management
 
-```sh
-# Using npm
-npm start
+------------------------------------------------------------------------
 
-# OR using Yarn
-yarn start
+## 🛠 Tech Stack
+
+-   **React Native**
+-   **React Navigation (Native Stack)**
+-   **Context API**
+-   **Custom Hooks**
+-   **AsyncStorage**
+-   **Fetch API**
+
+------------------------------------------------------------------------
+
+## 📁 Project Structure
+
+    src/
+    │── api/
+    │   └── tasksApi.js
+    │
+    │── assets/
+    │   └── colors.js
+    │   └── responsive.js
+    │
+    │── context/
+    │   └── TasksContext.js
+    │
+    │── hooks/
+    │   └── useTasks.js
+    │
+    │── navigation/
+    │   └── AppNavigator.js
+    │
+    │── screens/
+    │   ├── HomeScreen.js
+    │   └── DetailScreen.js
+    │
+    └── App.js
+
+------------------------------------------------------------------------
+
+## 🔗 API Used
+
+-   **Base URL:** `https://jsonplaceholder.typicode.com`
+-   **Endpoint:** `/todos`
+
+------------------------------------------------------------------------
+
+## ⚙️ Installation & Setup
+
+### 1. Clone the repository
+
+``` bash
+git clone <repository-url>
+cd wagons
 ```
 
-## Step 2: Build and run your app
+### 2. Install dependencies
 
-With Metro running, open a new terminal window/pane from the root of your React Native project, and use one of the following commands to build and run your Android or iOS app:
-
-### Android
-
-```sh
-# Using npm
-npm run android
-
-# OR using Yarn
-yarn android
+``` bash
+npm install
+# or
+yarn install
 ```
 
-### iOS
+### 3. Run the application
 
-For iOS, remember to install CocoaPods dependencies (this only needs to be run on first clone or after updating native deps).
+#### Android
 
-The first time you create a new project, run the Ruby bundler to install CocoaPods itself:
-
-```sh
-bundle install
+``` bash
+npx react-native run-android
 ```
 
-Then, and every time you update your native dependencies, run:
+#### iOS
 
-```sh
-bundle exec pod install
+``` bash
+cd ios
+pod install
+cd ..
+npx react-native run-ios
 ```
 
-For more information, please visit [CocoaPods Getting Started guide](https://guides.cocoapods.org/using/getting-started.html).
+------------------------------------------------------------------------
 
-```sh
-# Using npm
-npm run ios
+## 🧠 Architectural Decisions
 
-# OR using Yarn
-yarn ios
-```
+-   **Context API** is used for global task state management to avoid
+    prop drilling.
+-   **Custom Hooks** (`useTasksLogic`) encapsulate business logic for
+    fetching, caching, and updating tasks.
+-   **AsyncStorage** enables offline support and improves performance by
+    reducing API calls.
+-   **Responsive utilities** ensure consistent UI across different
+    devices.
+-   **Centralized colors** improve maintainability and enforce design
+    consistency.
 
-If everything is set up correctly, you should see your new app running in the Android Emulator, iOS Simulator, or your connected device.
+------------------------------------------------------------------------
 
-This is one way to run your app — you can also build it directly from Android Studio or Xcode.
+## 🧪 Error Handling
 
-## Step 3: Modify your app
+-   Graceful error messages are displayed if the API fails.
+-   Retry option is provided to re-fetch tasks.
+-   Local storage fallback ensures usability even when offline.
 
-Now that you have successfully run the app, let's make changes!
+------------------------------------------------------------------------
 
-Open `App.tsx` in your text editor of choice and make some changes. When you save, your app will automatically update and reflect these changes — this is powered by [Fast Refresh](https://reactnative.dev/docs/fast-refresh).
+## 🚀 Future Improvements
 
-When you want to forcefully reload, for example to reset the state of your app, you can perform a full reload:
+-   Pull-to-refresh support
+-   Pagination for large task lists
+-   Dark mode enhancements
+-   Unit and integration tests
+-   API mutation sync with backend
 
-- **Android**: Press the <kbd>R</kbd> key twice or select **"Reload"** from the **Dev Menu**, accessed via <kbd>Ctrl</kbd> + <kbd>M</kbd> (Windows/Linux) or <kbd>Cmd ⌘</kbd> + <kbd>M</kbd> (macOS).
-- **iOS**: Press <kbd>R</kbd> in iOS Simulator.
+------------------------------------------------------------------------
 
-## Congratulations! :tada:
+## 👨‍💻 Author
 
-You've successfully run and modified your React Native App. :partying_face:
+Developed as part of the Wagons assignment to demonstrate
+production-ready React Native development practices.
 
-### Now what?
+------------------------------------------------------------------------
 
-- If you want to add this new React Native code to an existing application, check out the [Integration guide](https://reactnative.dev/docs/integration-with-existing-apps).
-- If you're curious to learn more about React Native, check out the [docs](https://reactnative.dev/docs/getting-started).
+## 📄 License
 
-# Troubleshooting
-
-If you're having issues getting the above steps to work, see the [Troubleshooting](https://reactnative.dev/docs/troubleshooting) page.
-
-# Learn More
-
-To learn more about React Native, take a look at the following resources:
-
-- [React Native Website](https://reactnative.dev) - learn more about React Native.
-- [Getting Started](https://reactnative.dev/docs/environment-setup) - an **overview** of React Native and how setup your environment.
-- [Learn the Basics](https://reactnative.dev/docs/getting-started) - a **guided tour** of the React Native **basics**.
-- [Blog](https://reactnative.dev/blog) - read the latest official React Native **Blog** posts.
-- [`@facebook/react-native`](https://github.com/facebook/react-native) - the Open Source; GitHub **repository** for React Native.
+This project is for evaluation and educational purposes.
