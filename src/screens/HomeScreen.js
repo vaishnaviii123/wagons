@@ -172,6 +172,7 @@ const styles = StyleSheet.create({
     fontSize: fontScale(14),
     fontWeight: '500',
     color: colors.textSecondary,
+    textAlign:'left',
   },
 
   filterTextActive: {
@@ -207,6 +208,7 @@ const styles = StyleSheet.create({
     fontSize: fontScale(16),
     fontWeight: '600',
     color: colors.textPrimary,
+    textAlign:'left',
   },
 
   statusBadge: {
@@ -227,12 +229,14 @@ const styles = StyleSheet.create({
     fontSize: fontScale(12),
     fontWeight: '600',
     color: colors.textPrimary,
+    textAlign:'left',
   },
 
   subText: {
     marginTop: verticalScale(6),
     fontSize: fontScale(13),
     color: colors.textSecondary,
+    textAlign:'left',
   },
 
   emptyText: {

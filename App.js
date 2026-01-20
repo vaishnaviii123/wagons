@@ -8,7 +8,7 @@ import AppNavigator from './src/navigation/AppNavigator';
 import { LogBox } from 'react-native';
 import { TasksProvider } from './src/context/TasksContext';
 import colors from './src/assets/colors';
-
+import { LanguageProvider } from './src/context/LanguageProvider'
 
 enableScreens();
 LogBox.ignoreAllLogs(true);
@@ -19,15 +19,17 @@ export default function App() {
 
   return (
     <SafeAreaProvider>
-      <TasksProvider>
-        <NavigationContainer theme={isDarkMode ? DarkTheme : DefaultTheme}>
-          <StatusBar
-            barStyle={isDarkMode ? 'light-content' : 'dark-content'}
-            backgroundColor={isDarkMode ? colors.dark : colors.light}
-          />
-          <AppNavigator />
-        </NavigationContainer>
-      </TasksProvider>
+      <LanguageProvider>
+        <TasksProvider>
+          <NavigationContainer theme={isDarkMode ? DarkTheme : DefaultTheme}>
+            <StatusBar
+              barStyle={isDarkMode ? 'light-content' : 'dark-content'}
+              backgroundColor={isDarkMode ? colors.dark : colors.light}
+            />
+            <AppNavigator />
+          </NavigationContainer>
+        </TasksProvider>
+      </LanguageProvider>
     </SafeAreaProvider>
   );
 }

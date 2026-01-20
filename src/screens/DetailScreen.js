@@ -91,6 +91,7 @@ const styles = StyleSheet.create({
     fontWeight: '600',
     color: colors.textPrimary,
     marginBottom: verticalScale(16),
+    textAlign:'left',
   },
 
   metaRow: {
@@ -103,12 +104,14 @@ const styles = StyleSheet.create({
   label: {
     fontSize: fontScale(14),
     color: colors.textMuted,
+    textAlign:'left',
   },
 
   value: {
     fontSize: fontScale(14),
     fontWeight: '500',
     color: colors.textSecondary,
+    textAlign:'left',
   },
 
   statusBadge: {
@@ -129,6 +132,7 @@ const styles = StyleSheet.create({
     fontSize: fontScale(13),
     fontWeight: '600',
     color: colors.textPrimary,
+    textAlign:'left',
   },
 
   actionButton: {
@@ -143,5 +147,6 @@ const styles = StyleSheet.create({
     color: colors.textInverse,
     fontSize: fontScale(15),
     fontWeight: '600',
+    textAlign:'left',
   },
 });
